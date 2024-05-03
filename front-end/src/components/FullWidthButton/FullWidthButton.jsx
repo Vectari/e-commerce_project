@@ -8,10 +8,16 @@ const StyledButton = styled.button`
   padding: 1rem 0;
   color: ${Theme.color.white};
   text-transform: uppercase;
-  background-color: ${Theme.color["theme-main"]};
+  /* background-color: ${Theme.color["theme-main"]}; */
+  background-color: ${(props) =>
+    props.isBlack ? Theme.color["text-default"] : Theme.color["theme-main"]};
   font-weight: 700;
 `;
 
-export function FullWidthButton({ children, onClick }) {
-  return <StyledButton onClick={onClick}>{children}</StyledButton>;
+export function FullWidthButton({ children, onClick, isBlack }) {
+  return (
+    <StyledButton onClick={onClick} isBlack={isBlack}>
+      {children}
+    </StyledButton>
+  );
 }
