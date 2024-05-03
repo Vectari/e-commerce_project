@@ -15,7 +15,7 @@ const StyledBreadcrumbs = styled.div`
     text-transform: uppercase;
   }
 
-  li a .active {
+  li a.active {
     font-weight: 700;
   }
 
