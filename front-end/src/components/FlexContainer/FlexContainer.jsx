@@ -6,6 +6,7 @@ const StyledFlexContainer = styled.div`
   width: 100%;
   max-width: 100rem;
   margin: 0 auto;
+  align-items: flex-start;
 `;
 
 export function FlexContainer({ children }) {
