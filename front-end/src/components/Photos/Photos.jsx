@@ -48,5 +48,3 @@ export function Photos({ product }) {
     </FlexContainer>
   );
 }
-
-// TEST
