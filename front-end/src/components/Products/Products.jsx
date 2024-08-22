@@ -13,10 +13,10 @@ const ProductWrapper = styled.div`
   flex-wrap: wrap;
 `;
 
-export function Products({ products, headerText }) {
+export function Products({ products, headertext }) {
   return (
     <CenteredContent>
-      <StyledH2 headerText="Sprawdź nasze bestellery">{headerText}</StyledH2>
+      <StyledH2 headertext="Sprawdź nasze bestellery">{headertext}</StyledH2>
       <ProductWrapper>
         {products.map((product) => {
           return <Product key={product.id} product={product} />;

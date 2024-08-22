@@ -9,7 +9,7 @@ export function MainPage() {
   return (
     <>
       <Hero heroImage={heroImageUrl} />
-      <Products headerText="Sprawdź nasze bestellery" products={bestsellers} />
+      <Products headertext="Sprawdź nasze bestellery" products={bestsellers} />
     </>
   );
 }

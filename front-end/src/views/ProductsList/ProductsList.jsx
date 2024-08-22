@@ -165,7 +165,7 @@ export function ProductsList() {
       <ExpandableMenu />
       <div>
         <Breadcrumbs />
-        <Products headerText="Swetry" products={products} />
+        <Products headertext="Swetry" products={products} />
         <Pagination numberOfPages={5} />
       </div>
     </FlexContainer>
