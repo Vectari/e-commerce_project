@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { CATEGORIES } from "../../constants/categories";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { Theme } from "../../styles/Theme";
 
 const StyledCategoryMenu = styled.div`
@@ -25,6 +25,9 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 export function CategoryMenu() {
+  const params = useParams();
+  console.log(params)
+
   return (
     <StyledCategoryMenu>
       <StyledCategory>
