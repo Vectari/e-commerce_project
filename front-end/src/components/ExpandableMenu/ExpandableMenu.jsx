@@ -37,13 +37,19 @@ const StyledExpandableMenu = styled.div`
   }
 `;
 
+const PATH_TO_GENDER_NAME = {
+  kobieta: "Kobieta",
+  mezczyzna: "Mężczyzna",
+  dziecko: "Dziecko",
+};
+
 export function ExpandableMenu() {
   const params = useParams();
-  const activePath = "odziez";
+  const activePath = params.category;
 
   return (
     <StyledExpandableMenu>
-      <p>Kobieta</p>
+      <p>{PATH_TO_GENDER_NAME[params.gender]}</p>
       <ul>
         {CATEGORIES.map((category) => {
           return (
@@ -61,7 +67,9 @@ export function ExpandableMenu() {
                   {category.subcategories.map((subcategory) => {
                     return (
                       <li key={subcategory.path}>
-                        <NavLink to={subcategory.path}>
+                        <NavLink
+                          to={`/${params.gender}/${params.category}/${subcategory.path}`}
+                        >
                           {subcategory.categoryName}
                         </NavLink>
                       </li>
