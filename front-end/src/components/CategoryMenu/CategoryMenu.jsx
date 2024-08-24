@@ -26,7 +26,6 @@ const StyledNavLink = styled(NavLink)`
 
 export function CategoryMenu() {
   const params = useParams();
-  console.log(params)
 
   return (
     <StyledCategoryMenu>
@@ -34,7 +33,7 @@ export function CategoryMenu() {
         {CATEGORIES.map((category) => {
           return (
             <li key={category.path}>
-              <StyledNavLink to={category.path}>
+              <StyledNavLink to={`${params.gender}/${category.path}`}>
                 {category.categoryName}
               </StyledNavLink>
             </li>
