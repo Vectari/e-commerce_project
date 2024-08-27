@@ -9,6 +9,7 @@ import { Layout } from "./components/Layout/Layout";
 import { MainPage } from "./views/MainPage/MainPage";
 import { ProductsList } from "./views/ProductsList/ProductsList";
 import { mainPageLoader } from "./api/mainPageLoader";
+import { productListLoader } from "./api/productListLoader";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
       {
         path: "/:gender/:category",
         element: <ProductsList />,
+        loader: productListLoader,
       },
     ],
   },
