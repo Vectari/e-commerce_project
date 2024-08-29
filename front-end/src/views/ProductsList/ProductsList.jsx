@@ -23,10 +23,3 @@ export function ProductsList() {
     </FlexContainer>
   );
 }
-
-//
-//
-//
-//
-//
-//
