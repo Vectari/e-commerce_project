@@ -26,6 +26,10 @@ export function productListLoader({
 
     return fetch(url).then((response) => {
       console.log(response.headers.get("X-Total-Count"));
+      const numberOfPages = Math.ceil(
+        Number(response.headers.get("X-Total-Count")) / 8
+      );
+      console.log(numberOfPages);
     });
   } else {
     redirect("/kobieta");
