@@ -22,7 +22,11 @@ export function productListLoader({
       }
     }
 
-    return fetch(url);
+    url = `${url}&_limit=8&_page=1`;
+
+    return fetch(url).then((response) => {
+      console.log(response.headers.get("X-Total-Count"));
+    });
   } else {
     redirect("/kobieta");
   }
