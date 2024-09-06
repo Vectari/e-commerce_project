@@ -30,6 +30,13 @@ export function productListLoader({
         Number(response.headers.get("X-Total-Count")) / 8
       );
       console.log(numberOfPages);
+
+      return response.json().then((products) => {
+        return {
+          products,
+          numberOfPages,
+        };
+      });
     });
   } else {
     redirect("/kobieta");
