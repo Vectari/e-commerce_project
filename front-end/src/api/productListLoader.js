@@ -28,11 +28,9 @@ export function productListLoader({
     url = `${url}&_limit=8&_page=${page}`;
 
     return fetch(url).then((response) => {
-      // console.log(response.headers.get("X-Total-Count"));
       const numberOfPages = Math.ceil(
         Number(response.headers.get("X-Total-Count")) / 8
       );
-      // console.log(numberOfPages);
 
       return response.json().then((products) => {
         return {
