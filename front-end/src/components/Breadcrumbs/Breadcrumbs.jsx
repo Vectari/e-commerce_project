@@ -1,6 +1,7 @@
 import { NavLink, useParams } from "react-router-dom";
 import ARROW_ICON from "../../assets/arrow.svg";
 import styled from "styled-components";
+import { CATEGORIES, GENDERS } from "../../constants/categories";
 
 const StyledBreadcrumbs = styled.div`
   display: flex;
@@ -47,12 +48,23 @@ export function Breadcrumbs() {
     },
   ];
 
+  if (subcategory) {
+    const foundSubcategory = foundCategory.subcategories.find(
+      (sc) => sc.path === subcategory
+    );
+
+    breadcrumbs.push({
+      categoryName: foundSubcategory.categoryName,
+      path: `/${foundGender.path}/${foundCategory.path}/${foundSubcategory.path}`,
+    });
+  }
+
   return (
     <StyledBreadcrumbs>
       {breadcrumbs.map((breadcrumb) => {
         return (
           <li key={breadcrumb.path}>
-            <NavLink to={breadcrumb.path} />
+            <NavLink end to={breadcrumb.path} />
             {breadcrumb.categoryName}
             <img src={ARROW_ICON} alt="arrow icon" />
           </li>
