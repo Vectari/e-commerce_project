@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import ARROW_ICON from "../../assets/arrow.svg";
 import styled from "styled-components";
 
@@ -30,6 +30,8 @@ const StyledBreadcrumbs = styled.div`
 `;
 
 export function Breadcrumbs() {
+  const { gender, category, subcategory } = useParams();
+  console.log(gender, category, subcategory)
   const breadcrumbs = [
     {
       categoryName: "Kobieta",
