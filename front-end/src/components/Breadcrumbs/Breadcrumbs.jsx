@@ -31,19 +31,19 @@ const StyledBreadcrumbs = styled.div`
 
 export function Breadcrumbs() {
   const { gender, category, subcategory } = useParams();
-  console.log(gender, category, subcategory)
+  console.log(gender, category, subcategory);
+
+  const foundGender = GENDERS.find((g) => g.path === gender);
+  const foundCategory = CATEGORIES.find((c) => c.path === category);
+
   const breadcrumbs = [
     {
-      categoryName: "Kobieta",
-      path: "kobieta",
+      categoryName: foundGender.categoryName,
+      path: `/${foundGender.path}`,
     },
     {
-      categoryName: "Odzież",
-      path: "odziez",
-    },
-    {
-      categoryName: "Swetry",
-      path: "swetry",
+      categoryName: foundCategory.categoryName,
+      path: `/${foundGender.path}/${foundCategory.path}`,
     },
   ];
 
