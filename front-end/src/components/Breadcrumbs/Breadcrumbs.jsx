@@ -62,9 +62,10 @@ export function Breadcrumbs() {
       {breadcrumbs.map((breadcrumb) => {
         return (
           <li key={breadcrumb.path}>
-            <NavLink end to={breadcrumb.path} />
-            {breadcrumb.categoryName}
-            <img src={ARROW_ICON} alt="arrow icon" />
+            <NavLink end to={breadcrumb.path}>
+              {breadcrumb.categoryName}
+              <img src={ARROW_ICON} alt="arrow icon" />
+            </NavLink>
           </li>
         );
       })}
