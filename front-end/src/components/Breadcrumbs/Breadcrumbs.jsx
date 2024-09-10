@@ -72,11 +72,3 @@ export function Breadcrumbs() {
     </StyledBreadcrumbs>
   );
 }
-//
-//
-//
-//
-//
-//
-//
-//
